@@ -1,3 +1,11 @@
+#include <Adafruit_DotStar.h>
+
+#define NUMPIXELS 1 // Number of LEDs in strip
+int PIXEL = 0;
+// Here's how to control the LEDs from any two pins:
+#define DATAPIN    41
+#define CLOCKPIN   40
+Adafruit_DotStar strip(NUMPIXELS, DATAPIN, CLOCKPIN, DOTSTAR_BRG);
 #include "HID-Project.h"
 #include "Keypad.h" w
 
@@ -17,11 +25,15 @@ char keys[ROWS][COLUMNS] = {
 
 byte rowPins[ROWS] = {11,12,13};
 byte colPins[COLUMNS] = {9, 10};
-Keypad keypad = Keypad(makeKeymap(keys), rowPins, colPins, ROWS, COLUMNS );
+Keypad keypad = Keypad( makeKeymap(keys), rowPins, colPins, ROWS, COLUMNS );
 
 void setup() {
   Serial.begin(9600);
   Consumer.begin();
+    strip.begin();
+  strip.show(); // Initialize all pixels to 'off'
+  strip.setPixelColor(0, 0, 255, 255);
+  strip.show(); // Initialize all pixels to 'off'
 }
 
 void loop() {
@@ -30,21 +42,32 @@ void loop() {
     switch (key) {
       Serial.println(key);
       case '1':
+        strip.setPixelColor(PIXEL, 50, 0, 0);
+        strip.show();
         Consumer.write(MEDIA_NEXT);
         break;
       case '2':
+        strip.setPixelColor(PIXEL, 50, 0, 0);
+        strip.show();
         Consumer.write(MEDIA_VOLUME_UP);
         break;
       case '3':
+        strip.setPixelColor(PIXEL, 50, 0, 10);
+        strip.show();
         Consumer.write(MEDIA_PLAY_PAUSE);  
         break;
       case '4':
+        strip.setPixelColor(PIXEL, 50, 0, 0);
         Consumer.write(MEDIA_PREVIOUS);
         break;
       case '5':
+        strip.setPixelColor(PIXEL, 50, 0, 0);
+        strip.show();
         Consumer.write(MEDIA_VOLUME_DOWN);
         break;
       case '6':
+        strip.setPixelColor(PIXEL, 0, 0, 10);
+        strip.show();
         Consumer.write(MEDIA_VOLUME_MUTE);
         break;
     }
