@@ -43,4 +43,4 @@ while True:
     if keys:
         for key in keys:
             cc.send(KEYS[key])
-    time.sleep(0.1)
+        time.sleep(0.1)
