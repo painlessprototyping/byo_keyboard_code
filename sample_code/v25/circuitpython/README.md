@@ -25,5 +25,23 @@ Copy over the example file. Reboot happens automatically on save.
 Baud rate: 115200
 
  - Windows: Use PuTTY
- - Open terminal, run: `screen /dev/tty.usbmodem14301 115200`. 
-   - Ctrl-A then Ctrl-D to quit. To clean up session: `screen -ls` to get the session name. `screen -X -S <session-name quit`.
+ - Mac/OSX:
+   - Open terminal, run:
+   - Get device: `ls /dev/tty.*`
+   - Connect: `screen /dev/tty.usbmodem14301 115200`
+   - Quit: Ctrl-A then Ctrl-D. To clean up session: `screen -ls` to get the session name. `screen -X -S <session-name quit`.
+ - Arduino IDE
+   - Open the program.
+   - In the top Menu, select Tools:
+   - Configure Board: *Adafruit Circuit Playground*
+   - Configure Port: *usbmodem*
+   - Click **Serial Monitor**
+
+If you can't connect, there's likely a bug in your `code.py`, slim it down to the simplest possible code:
+
+```python
+import time
+while True:
+    print("hello world")
+    time.sleep(1)
+```
