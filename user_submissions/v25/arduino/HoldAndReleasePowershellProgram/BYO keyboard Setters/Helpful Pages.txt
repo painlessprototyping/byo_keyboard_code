@@ -1,0 +1,3 @@
+https://arduinogetstarted.com/reference/arduino-keyboard-modifiers
+
+http://www.asciitable.com/
