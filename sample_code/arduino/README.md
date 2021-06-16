@@ -5,3 +5,4 @@
     - [HID Project](https://github.com/NicoHood/HID)
 3. Copy code in this folder to Arduino IDE
 4. Upload it.
+5. Happy Making!

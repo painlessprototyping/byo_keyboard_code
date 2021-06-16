@@ -1,11 +1,3 @@
-# Write your code here :-)
-# # CircuitPython IO demo #1 - General Purpose I/O
-# https://github.com/adafruit/Adafruit_CircuitPython_Bundle/releases
-# https://learn.adafruit.com/matrix-keypad/python-circuitpython
-# Get firmware from: https://circuitpython.org/
-# Get library from: https://github.com/adafruit/Adafruit_CircuitPython_Bundle/releases/tag/20201203
-# Tutorial: https://learn.adafruit.com/adafruit-feather-m0-express-designed-for-circuit-python-circuitpython/circuitpython-hid-keyboard-and-mouse
-
 import time
 import board
 import digitalio
@@ -21,13 +13,24 @@ time.sleep(1)  # Sleep for a bit to avoid a race condition on some systems
 control_key = Keycode.SHIFT
 cc = ConsumerControl(usb_hid.devices)
 
-cols = [digitalio.DigitalInOut(x) for x in (board.D11, board.D12, board.D13)]
-rows = [digitalio.DigitalInOut(x) for x in (board.D7, board.D9, board.D10)]
-keys = (
-    (0,1,2),
-    (3,4,5),
-    (6,7,8),
-)
+# Uncomment the following code for 6 Key (V2.5)
+# cols = [digitalio.DigitalInOut(x) for x in (board.D11, board.D12, board.D13)]
+# rows = [digitalio.DigitalInOut(x) for x in (board.D9, board.D10)]
+# keys = (
+#     (0,1,2),
+#     (3,4,5),
+# )
+
+# Uncomment the following code for 9 Key (V2.6)
+# cols = [digitalio.DigitalInOut(x) for x in (board.D11, board.D12, board.D13)]
+# rows = [digitalio.DigitalInOut(x) for x in (board.D7, board.D9, board.D10)]
+# keys = (
+#     (6,7,8),
+#     (3,4,5),
+#     (0,1,2),
+# )
+
+
 keypad = adafruit_matrixkeypad.Matrix_Keypad(rows, cols, keys)
 
 KEYS = [
