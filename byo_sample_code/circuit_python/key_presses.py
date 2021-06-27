@@ -1,3 +1,6 @@
+# For a full list of keycodes:
+# https://circuitpython.readthedocs.io/projects/hid/en/latest/_modules/adafruit_hid/keycode.html
+
 import time
 import board
 import digitalio
