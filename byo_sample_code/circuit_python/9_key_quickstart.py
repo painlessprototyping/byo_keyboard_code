@@ -7,6 +7,10 @@ https://discord.gg/RkTDf22MUz
 Brand New to Circuit Python? Start here:
 https://learn.adafruit.com/welcome-to-circuitpython
 https://learn.adafruit.com/circuitpython-essentials/circuitpython-essentials
+
+
+To Setup the ItsyBitsy, start here:
+https://github.com/painlessprototyping/byo_keyboard_code/tree/master/byo_sample_code/circuit_python
 """
 
 # The following modules are included with CircuitPython, 
