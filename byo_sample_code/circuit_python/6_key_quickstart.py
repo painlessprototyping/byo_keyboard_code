@@ -67,12 +67,12 @@ keypad = adafruit_matrixkeypad.Matrix_Keypad(rows, columns, output_values)
 # Above we define output_values as 0 through 5. 0 will point to Keycode.ONE and so one. 
 # For more Keycodes, check here: https://circuitpython.readthedocs.io/projects/hid/en/latest/index.html
 KEYBOARD_KEYS = [
-    Keycode.ONE,
-    Keycode.TWO,
-    Keycode.THREE,
-    Keycode.FOUR,
-    Keycode.FIVE,
-    Keycode.SIX,
+    Keycode.SPACEBAR,
+    Keycode.UP_ARROW,
+    Keycode.SPACEBAR,
+    Keycode.LEFT_ARROW,
+    Keycode.DOWN_ARROW,
+    Keycode.RIGHT_ARROW
 ]
 
 # The following code sets up the ItsyBitsy as a keyboard
